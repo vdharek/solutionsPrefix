@@ -46,7 +46,7 @@ public class Clients {
 	@Column(name="requirments")
 	private String requirments;
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	@Column(name="startdate")
 	private Date projectBeginingDate;
 	

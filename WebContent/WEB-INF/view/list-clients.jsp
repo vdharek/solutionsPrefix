@@ -4,6 +4,11 @@
 <html>
 <head>
 	<title>List Clients</title>
+	
+	<!-- css reference -->
+	<link type="text/css"
+		rel="stylesheet"
+		href="${pageContext.request.contextPath}/resources/css/style.css"/>
 </head>
 
 <body>
