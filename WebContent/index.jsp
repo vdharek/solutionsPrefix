@@ -24,7 +24,7 @@
     <header>
         <div class="container">
             <div id="branding">
-                <a href=./index.jsp><img src="<c:url value='/resources/images/PngFile.png'/>" width="100px" height="50px" alt="Tagor"></a>
+                <a href="${pageContext.request.contextPath}/index.jsp"><img src="<c:url value='/resources/images/PngFile.png'/>" width="100px" height="50px" alt="Tagor"></a>
             </div>
             <nav>
                 <p>Placeholder</p>
@@ -58,7 +58,7 @@
                             </p>
             </div>
             <div class="box1">
-                <a href="${pageContext.request.contextPath}/WEB-INF/view/stat.jsp"><button type="button" class="btn first">Way to PreFix</button></a>
+               <a href="${pageContext.request.contextPath}/clients/list"><button type="button" class="btn first">Way to PreFix</button></a>
             </div>
         </div>
     </section>

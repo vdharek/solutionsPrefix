@@ -22,38 +22,14 @@
     
     <script src="<c:url value='/resources/js/script.js'/>"></script>
     <title>PreFix</title>
+    
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <a href="index.html"><img src="images/PngFile.png" width="100px" height="50px" alt="Tagor"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="addClients.html">New Client</a></li>
-                    <li><a href="#">Show Clients</a></li>
-                    <li><a href="stat.html">Statastic</a></li>
-                    <li><a href="#">Documentation</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="boxes">
-        <div class="container">
-
-            <h3>Statastic:</h3>
-            
-
-        </div>
-
-    </section>
-
     <footer id="footboxs">
         <div class="container grid">
             <div class="boxs">
-                <img src="./images/PngFile.png" style="width: 13rem;">
+                <img src="<c:url value='/resources/images/PngFile.png'/>"  style="width: 13rem;">
                 <p>"PreFix", Address is not required.
                 </p>
             </div>
