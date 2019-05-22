@@ -1,66 +1,117 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>List Clients</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<!-- css reference -->
+<!-- CSS files -->
+
 <link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/style.css" />
+	href="${pageContext.request.contextPath}/resources/css/main.css" />
 
-<jsp:include page="header.jsp" />
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/form.css" />
 
+<link type="text/css" rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<!-- JavaScript file -->
+
+<script src="<c:url value='/resources/js/script.js'/>"></script>
+
+<title>Add Clients</title>
 </head>
+
 <body>
+	<jsp:include page="header.jsp" />
+
 	<section id="boxes">
 		<div class="container">
-			<div class="boxlist">
+			<div class="box">
 
-				<h3>Clients:</h3>
+				<form:form name="NewClient" action="saveClient"
+					modelAttribute="client" method="POST">
 
-				<!-- add out HTML table here -->
+					<table cellpadding="2" width="60%" bgcolor="99FFFF" align="center"
+						cellspacing="2">
 
-				<table>
-					<tr>
-						<th>First Name :</th>
-						<th>Last Name :</th>
-						<th>Email :</th>
-						<th>Mobile Number :</th>
-						<th>City :</th>
-						<th>Country :</th>
-						<th>Start Date :</th>
-						<th>End Date :</th>
-					</tr>
-
-					<!-- loop over and print our customers -->
-					<c:forEach var="tempClients" items="${clientsModel}">
-						
 						<tr>
-							<td>${tempClients.firstName}</td>
-							<td>${tempClients.lastName}</td>
-							<td>${tempClients.email}</td>
-							<td>${tempClients.mobileNumber}</td>
-							<td>${tempClients.city}</td>
-							<td>${tempClients.country}</td>
-							<td>
-								"${tempClients.projectBeginingDate}" 
+							<td colspan=2>
+								<h2>Mr ${client.firstName}'s Information:</h2>
 							</td>
-							
-							<td>
-								"${tempClients.projectEndDate}"
-							</td>							
 						</tr>
 
-					</c:forEach>
-				</table>
+						<tr>
+							<td>First Name:</td>
+							<td>${client.firstName}</td>
+						</tr>
+
+						<tr>
+							<td>Last Name:</td>
+							<td>${client.lastName}</td>
+						</tr>
+
+						<tr>
+							<td>E-mail:</td>
+							<td>${client.email}</td>
+						</tr>
+
+						<tr>
+							<td>Mobile Number:</td>
+							<td>${client.mobileNumber}</td>
+						</tr>
+
+						<tr>
+							<td>City:</td>
+							<td>${client.city}</td>
+						</tr>
+
+						<tr>
+							<td>Country:</td>
+							<td>${client.country}</td>
+						</tr>
+
+						<!-- dropdown example -->
+
+						<tr>
+							<td>Project Domain:</td>
+							<td><select name="proDomain" class="dropdown">
+									<option value="-1" selected>select..</option>
+									<option value="webDevelopment">Web-Development</option>
+									<option value="softwareDevelopment">Software
+										Development</option>
+									<option value="applicationDevelopment">Application
+										Development</option>
+							</select></td>
+						</tr>
+
+						<tr>
+							<td>Requirments:</td>
+							<td>"${client.requirments}"</td>
+						</tr>
+
+						<tr>
+							<td>Project Given Date:</td>
+							<td>"${client.projectBeginingDate}" </td>
+						</tr>
+
+						<tr>
+							<td>Expected date to complete:</td>
+							<td>"${client.projectEndDate}"</td>
+						</tr>
+					</table>
+				</form:form>
 			</div>
 		</div>
 	</section>
 
-
-	<jsp:include page="footer.jsp" />
-
+	<footer id="footboxs">
+		<jsp:include page="footer.jsp" />
+	</footer>
 </body>
 
 </html>

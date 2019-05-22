@@ -67,6 +67,5 @@ public class ClientsController {
 		
 		// send over to our form		
 		return "one-client";
-	}
-	
+	}	
 }

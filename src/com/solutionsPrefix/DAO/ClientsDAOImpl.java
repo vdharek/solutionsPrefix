@@ -46,15 +46,12 @@ public class ClientsDAOImpl implements ClientsDAO {
 
 	@Override
 	public Clients getClient(int theId) {
+		
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		// write wuery for one client
-		Query<Clients> theQuery = 
-				currentSession.createQuery("from Clients", Clients.class);
-		
 		// now retrive/read from database using the primary key
-		Clients theClient = theQuery.getSingleResult(theId);
+		Clients theClient = currentSession.get(Clients.class, theId);
 		
 		return theClient;
 	}

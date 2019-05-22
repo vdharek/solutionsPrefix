@@ -97,13 +97,13 @@
 						</tr>
 
 						<tr>
-							<td>PROJECT GIVEN DATE:</td>
+							<td>Project Given Date:</td>
 							<td><form:input type="date" path="projectBeginingDate"
 									id="mobilenumber"/></td>
 						</tr>
 
 						<tr>
-							<td>EXPECTED DATE TO COMPLETE:</td>
+							<td>Expected Project to Complete:</td>
 							<td><form:input type="date" path="projectEndDate"
 									id="mobilenumber"/></td>
 						</tr>
