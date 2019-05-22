@@ -1,6 +1,7 @@
 package com.solutionsPrefix.entity;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="prefix_clients_tbl")
@@ -32,7 +35,7 @@ public class Clients {
 	private String email;
 	
 	@Column(name="mobilenumber")
-	private int mobileNumber;
+	private String mobileNumber;
 	
 	@Column(name="city")
 	private String city;
@@ -46,10 +49,11 @@ public class Clients {
 	@Column(name="requirments")
 	private String requirments;
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	@Column(name="startdate")
 	private Date projectBeginingDate;
 	
+	//@Temporal(TemporalType.DATE)
 	@Column(name="enddate")
 	private Date projectEndDate;
 
@@ -70,7 +74,7 @@ public class Clients {
 		return email;
 	}
 
-	public int getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
 
@@ -114,7 +118,7 @@ public class Clients {
 		this.email = email;
 	}
 
-	public void setMobileNumber(int mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 

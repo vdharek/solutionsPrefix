@@ -36,8 +36,7 @@ public class ClientsDAOImpl implements ClientsDAO {
 
 	@Override
 	public void saveClient(Clients theClients) {
-		// get current hibernate session
-		
+		// get current hibernate session	
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// save the clients
@@ -45,4 +44,18 @@ public class ClientsDAOImpl implements ClientsDAO {
 		
 	}
 
+	@Override
+	public Clients getClient(int theId) {
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// write wuery for one client
+		Query<Clients> theQuery = 
+				currentSession.createQuery("from Clients", Clients.class);
+		
+		// now retrive/read from database using the primary key
+		Clients theClient = theQuery.getSingleResult(theId);
+		
+		return theClient;
+	}
 }

@@ -9,5 +9,7 @@ public interface ClientsDAO {
 	public List<Clients> getClients();
 
 	public void saveClient(Clients theClients);
+
+	public Clients getClient(int theId);
 	
 }

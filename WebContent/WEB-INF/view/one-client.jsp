@@ -31,16 +31,10 @@
 						<th>Country :</th>
 						<th>Start Date :</th>
 						<th>End Date :</th>
-						<th>View</th>
 					</tr>
 
 					<!-- loop over and print our customers -->
 					<c:forEach var="tempClients" items="${clientsModel}">
-
-						<!-- construct an "view" link with customer Id -->
-						<c:url var="viewLink" value="/clients/viewOneClient">
-							<c:param name="clientId" value="${tempClients.id }" />
-						</c:url>
 						
 						<tr>
 							<td>${tempClients.firstName}</td>
@@ -55,10 +49,6 @@
 							
 							<td>
 								"${tempClients.projectEndDate}"
-							</td>
-							
-							<td>
-								<a href="${viewLink }">View</a>
 							</td>							
 						</tr>
 

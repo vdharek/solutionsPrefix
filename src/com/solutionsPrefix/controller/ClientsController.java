@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.solutionsPrefix.DAO.ClientsDAO;
 import com.solutionsPrefix.entity.Clients;
@@ -53,4 +54,19 @@ public class ClientsController {
 		
 		return "redirect:/clients/list";
 	}
+	
+	@GetMapping("/viewOneClient")
+	public String viewDetails(@RequestParam("clientId") int theId,
+							Model theModel) {
+		
+		// get the client from the service
+		Clients theClient = clientsService.getClient(theId);
+		
+		// set customer as a model attribute to pre-populate the form
+		theModel.addAttribute("client",theClient);
+		
+		// send over to our form		
+		return "one-client";
+	}
+	
 }
