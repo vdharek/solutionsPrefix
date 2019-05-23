@@ -29,6 +29,7 @@
 						<th>Mobile Number :</th>
 						<th>City :</th>
 						<th>Country :</th>
+						<th>Domain:</th>
 						<th>Start Date :</th>
 						<th>End Date :</th>
 						<th>View</th>
@@ -49,6 +50,7 @@
 							<td>${tempClients.mobileNumber}</td>
 							<td>${tempClients.city}</td>
 							<td>${tempClients.country}</td>
+							<td>${tempClients.domain}</td>
 							<td>
 								"${tempClients.projectBeginingDate}" 
 							</td>

@@ -36,6 +36,10 @@
 				<form:form name="NewClient" action="saveClient"
 					modelAttribute="client" method="POST">
 
+						<c:url var="updateViewLink" value="/clients/formForUpdate">
+							<c:param name="clientId" value="${client.id }" />
+						</c:url>
+
 					<table cellpadding="2" width="60%" bgcolor="99FFFF" align="center"
 						cellspacing="2">
 
@@ -79,14 +83,7 @@
 
 						<tr>
 							<td>Project Domain:</td>
-							<td><select name="proDomain" class="dropdown">
-									<option value="-1" selected>select..</option>
-									<option value="webDevelopment">Web-Development</option>
-									<option value="softwareDevelopment">Software
-										Development</option>
-									<option value="applicationDevelopment">Application
-										Development</option>
-							</select></td>
+							<td>${client.domain}</td>
 						</tr>
 
 						<tr>
@@ -103,6 +100,13 @@
 							<td>Expected date to complete:</td>
 							<td>"${client.projectEndDate}"</td>
 						</tr>
+						
+						<tr>
+							<td><a href="${updateViewLink }">Delete</a></td>
+							<td><a href="${updateViewLink }">Update</a>
+							</td>
+						</tr>
+						
 					</table>
 				</form:form>
 			</div>

@@ -5,6 +5,8 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 //import javax.persistence.EnumType;
 //import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -44,7 +46,8 @@ public class Clients {
 	private String country;
 	
 	//@Enumerated(EnumType.STRING)
-	//private DomainType domain;
+	@Column(name="domain")
+	private String domain;
 	
 	@Column(name="requirments")
 	private String requirments;
@@ -86,9 +89,9 @@ public class Clients {
 		return country;
 	}
 
-	//public DomainType getDomain() {
-	//	return domain;
-	//}
+	public String getDomain() {
+		return domain;
+	}
 
 	public String getRequirments() {
 		return requirments;
@@ -130,9 +133,9 @@ public class Clients {
 		this.country = country;
 	}
 
-	//public void setDomain(DomainType domain) {
-	//	this.domain = domain;
-	//}
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
 
 	public void setRequirments(String requirments) {
 		this.requirments = requirments;
@@ -149,9 +152,9 @@ public class Clients {
 	@Override
 	public String toString() {
 		return "Clients [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", mobileNumber=" + mobileNumber + ", city=" + city + ", country=" + country + ", requirments="
-				+ requirments + ", projectBeginingDate=" + projectBeginingDate + ", projectEndDate=" + projectEndDate
-				+ "]";
+				+ ", mobileNumber=" + mobileNumber + ", city=" + city + ", country=" + country + ", domain=" + domain
+				+ ", requirments=" + requirments + ", projectBeginingDate=" + projectBeginingDate + ", projectEndDate="
+				+ projectEndDate + "]";
 	}
 	
 }

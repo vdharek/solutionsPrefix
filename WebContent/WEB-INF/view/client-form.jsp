@@ -80,14 +80,12 @@
 
 						<tr>
 							<td>Project Domain:</td>
-							<td><select name="proDomain" class="dropdown">
-									<option value="-1" selected>select..</option>
-									<option value="webDevelopment">Web-Development</option>
-									<option value="softwareDevelopment">Software
-										Development</option>
-									<option value="applicationDevelopment">Application
-										Development</option>
-							</select></td>
+							<td>
+								<form:select path="domain">
+								<form:option value="NONE" label="Select" />
+								<form:options items="${domainList}" />
+								</form:select>
+							</td>
 						</tr>
 
 						<tr>
@@ -99,13 +97,13 @@
 						<tr>
 							<td>Project Given Date:</td>
 							<td><form:input type="date" path="projectBeginingDate"
-									id="mobilenumber"/></td>
+									id="mobilenumber" /></td>
 						</tr>
 
 						<tr>
 							<td>Expected Project to Complete:</td>
 							<td><form:input type="date" path="projectEndDate"
-									id="mobilenumber"/></td>
+									id="mobilenumber" /></td>
 						</tr>
 
 						<center>

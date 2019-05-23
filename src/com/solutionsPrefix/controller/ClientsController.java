@@ -1,5 +1,6 @@
 package com.solutionsPrefix.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,50 +23,72 @@ public class ClientsController {
 	// need to inject the customer dao
 	@Autowired
 	private ClientService clientsService;
-	
+
 	@GetMapping("/list")
 	public String listClients(Model theModel) {
-		
+
 		// get customer from the dao
 		List<Clients> theClients = clientsService.getClients();
-		
+
 		// add the customer to the model
 		theModel.addAttribute("clientsModel", theClients);
-		
+
 		return "list-clients";
 	}
-	
+
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
-		
+
 		// create model attribute for binding
 		Clients theClient = new Clients();
-		
+
 		theModel.addAttribute("client", theClient);
-		
+
 		return "client-form";
 	}
-	
+
 	@PostMapping("/saveClient")
 	public String saveClient(@ModelAttribute("client") Clients theClients) {
-		
+
 		// Save the client
 		clientsService.saveClient(theClients);
-		
+
 		return "redirect:/clients/list";
 	}
-	
+
 	@GetMapping("/viewOneClient")
-	public String viewDetails(@RequestParam("clientId") int theId,
-							Model theModel) {
-		
+	public String viewDetails(@RequestParam("clientId") int theId, Model theModel) {
+
 		// get the client from the service
 		Clients theClient = clientsService.getClient(theId);
-		
+
 		// set customer as a model attribute to pre-populate the form
-		theModel.addAttribute("client",theClient);
-		
-		// send over to our form		
+		theModel.addAttribute("client", theClient);
+
+		// send over to our form
 		return "one-client";
-	}	
+	}
+
+	@GetMapping("/formForUpdate")
+	public String updateDetails(@RequestParam("clientId") int theId, Model theModel) {
+		System.out.println("Form for UPDATE method");
+		// get the client from the service
+		Clients theClient = clientsService.getClient(theId);
+
+		// set customer as a model attribute to pre-populate the form
+		theModel.addAttribute("client", theClient);
+
+		// send over to our form
+		return "client-form";
+	}
+
+	@ModelAttribute("domainList")
+	public List<String> getCountryList() {
+		List<String> domainList = new ArrayList<String>();
+		domainList.add("Web-Development");
+		domainList.add("Software Development");
+		domainList.add("Application Development");
+		return domainList;
+	}
+
 }
