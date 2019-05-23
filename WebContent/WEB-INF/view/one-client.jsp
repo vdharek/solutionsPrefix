@@ -32,14 +32,10 @@
 	<section id="boxes">
 		<div class="container">
 			<div class="box">
-
+			
 				<form:form name="NewClient" action="saveClient"
 					modelAttribute="client" method="POST">
-
-						<c:url var="updateViewLink" value="/clients/formForUpdate">
-							<c:param name="clientId" value="${client.id }" />
-						</c:url>
-
+										
 					<table cellpadding="2" width="60%" bgcolor="99FFFF" align="center"
 						cellspacing="2">
 
@@ -99,12 +95,6 @@
 						<tr>
 							<td>Expected date to complete:</td>
 							<td>"${client.projectEndDate}"</td>
-						</tr>
-						
-						<tr>
-							<td><a href="${updateViewLink }">Delete</a></td>
-							<td><a href="${updateViewLink }">Update</a>
-							</td>
 						</tr>
 						
 					</table>

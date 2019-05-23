@@ -36,12 +36,15 @@
 				<form:form name="NewClient" action="saveClient"
 					modelAttribute="client" method="POST">
 
+				<!-- need to associate this data with customer ID -->
+				<form:hidden path="id"/>
+
 					<table cellpadding="2" width="60%" bgcolor="99FFFF" align="center"
 						cellspacing="2">
 
 						<tr>
 							<td colspan=2>
-								<h3>Add new Client:</h3>
+								<h2>Add new Client:</h2>
 							</td>
 						</tr>
 

@@ -71,23 +71,35 @@ public class ClientsController {
 
 	@GetMapping("/formForUpdate")
 	public String updateDetails(@RequestParam("clientId") int theId, Model theModel) {
-		System.out.println("Form for UPDATE method");
+
 		// get the client from the service
 		Clients theClient = clientsService.getClient(theId);
 
 		// set customer as a model attribute to pre-populate the form
 		theModel.addAttribute("client", theClient);
 
-		// send over to our form
 		return "client-form";
+
+	}
+	
+	@GetMapping("/delete")
+	public String deleteClient(@RequestParam("clientId") int theId) {
+		
+		clientsService.deleteCustomer(theId);
+		
+		return "redirect:/clients/list";
 	}
 
+	// Drop-down list
 	@ModelAttribute("domainList")
 	public List<String> getCountryList() {
+
 		List<String> domainList = new ArrayList<String>();
+
 		domainList.add("Web-Development");
 		domainList.add("Software Development");
 		domainList.add("Application Development");
+
 		return domainList;
 	}
 

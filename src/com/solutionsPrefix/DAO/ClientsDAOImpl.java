@@ -40,7 +40,7 @@ public class ClientsDAOImpl implements ClientsDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// save the clients
-		currentSession.save(theClients);
+		currentSession.saveOrUpdate(theClients);
 		
 	}
 
@@ -54,5 +54,17 @@ public class ClientsDAOImpl implements ClientsDAO {
 		Clients theClient = currentSession.get(Clients.class, theId);
 		
 		return theClient;
+	}
+
+	@Override
+	public void deleteClient(int theId) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Query theQuery = currentSession.createQuery("delete from Clients where id=:clientId");
+		
+		theQuery.setParameter("clientId", theId);
+		
+		theQuery.executeUpdate();
 	}
 }

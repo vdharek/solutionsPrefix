@@ -11,5 +11,7 @@ public interface ClientsDAO {
 	public void saveClient(Clients theClients);
 
 	public Clients getClient(int theId);
+
+	public void deleteClient(int theId);
 	
 }

@@ -17,22 +17,21 @@
 		<div class="container">
 			<div class="boxlist">
 
-				<h3>Clients:</h3>
+				<h2>Clients:</h2>
 
 				<!-- add out HTML table here -->
 
 				<table>
 					<tr>
-						<th>First Name :</th>
-						<th>Last Name :</th>
-						<th>Email :</th>
-						<th>Mobile Number :</th>
-						<th>City :</th>
-						<th>Country :</th>
-						<th>Domain:</th>
-						<th>Start Date :</th>
-						<th>End Date :</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Mobile Number</th>
+						<th>City</th>
+						<th>Country</th>
+						<th>Domain</th>
 						<th>View</th>
+						<th>Action</th>
 					</tr>
 
 					<!-- loop over and print our customers -->
@@ -40,6 +39,14 @@
 
 						<!-- construct an "view" link with customer Id -->
 						<c:url var="viewLink" value="/clients/viewOneClient">
+							<c:param name="clientId" value="${tempClients.id }" />
+						</c:url>
+						
+						<c:url var="updateLink" value="/clients/formForUpdate">
+							<c:param name="clientId" value="${tempClients.id }" />
+						</c:url>
+						
+						<c:url var="deleteLink" value="/clients/delete">
 							<c:param name="clientId" value="${tempClients.id }" />
 						</c:url>
 						
@@ -51,16 +58,15 @@
 							<td>${tempClients.city}</td>
 							<td>${tempClients.country}</td>
 							<td>${tempClients.domain}</td>
-							<td>
-								"${tempClients.projectBeginingDate}" 
-							</td>
-							
-							<td>
-								"${tempClients.projectEndDate}"
-							</td>
 							
 							<td>
 								<a href="${viewLink }">View</a>
+							</td>	
+							<td>
+								<a href="${updateLink }">Update</a>
+								|
+								<a href="${deleteLink }"
+								onClick="if(!(confirm('Are you sure you want to delete this Client?')))return false">Delete</a>
 							</td>							
 						</tr>
 
