@@ -4,126 +4,113 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<!-- CSS files -->
-
-<link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/main.css" />
-
-<link type="text/css" rel="stylesheet"
+    <!-- CSS files -->
+    <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/form.css" />
 
-<link type="text/css" rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link type="text/css" rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" /> 
 
-<!-- JavaScript file -->
+    <!-- JavaScript file -->
 
-<script src="<c:url value='/resources/js/script.js'/>"></script>
-
-<title>Add Clients</title>
+    <script src="<c:url value='/resources/js/script.js'/>"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Add Clients</title>
 </head>
 
 <body>
-	<jsp:include page="header.jsp" />
+    <jsp:include page="header.jsp" />
 
-	<section id="boxes">
-		<div class="container">
-			<div class="box">
+    <div class="container">
+        <div class="row">
 
-				<form:form name="NewClient" action="saveClient"
-					modelAttribute="client" method="POST">
+            <div class="col-sm-7">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <h3>ADD NEW CLIENT</h3>
+                    <br>
+                    <div class="addnew-form">
+                        <form:form name="NewClient" action="saveClient" modelAttribute="client" method="POST"
+                            onSubmit="return(validate());">
 
-				<!-- need to associate this data with customer ID -->
-				<form:hidden path="id"/>
+                            <!-- need to associate this data with customer ID -->
+                            <form:hidden path="id" />
 
-					<table cellpadding="2" width="60%" bgcolor="99FFFF" align="center"
-						cellspacing="2">
+                            <div class="form-group">
+                                <label>First Name:</label>
+                                <form:input type="text" path="firstName" placeholder="First Name" id="firstName"  class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name:</label>
+                                <form:input type="text" path="lastName" placeholder="Last Name" id="lastName"  class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail:</label>
+                                <form:input type="text" path="email" placeholder="E-mail" id="emailId"  class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Mobile Number:</label>
+                                <form:input type="text" path="mobileNumber" placeholder="Mobile Number" id="mobileNo" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>City:</label>
+                                <form:input type="text" path="city" placeholder="City" id="city" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Country:</label>
+                                <form:input type="text" path="country" placeholder="Country" id="country" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Domain:</label>
+                                <form:select path="domain" class="form-control">
+                                    <form:option value="NONE" label="Select" />
+                                    <form:options items="${domainList}" id="proDomain" />
+                                </form:select>
+                            </div>
+                            <div class="form-group">
+                                <label>Requirments:</label>
+                                <form:textarea path="requirments" placeholder="Requirments..." id="requirments" rows="4" cols="30" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Start Date:</label>
+                                <form:input type="date" path="projectBeginingDate" id="projectBeginingDate"
+                                    required="required" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Project Deadline:</label>
+                                <form:input type="date" path="projectEndDate" id="projectEndDate" required="required" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            </div>
+                            <div class="clearfix">
+                                <!-- <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label> -->
+                                <!-- <a href="#" class="pull-right">Forgot Password?</a> -->
+                            </div>
+                            </form:form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="well">
+                    <p>APIs.. Coming Soon</p>
+                </div>
+                <div class="well">
+                    <p>APIs.. Coming Soon</p>
+                </div>
+                <div class="well">
+                    <p>APIs.. Coming Soon</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
 
-						<tr>
-							<td colspan=2>
-								<h2>Add new Client:</h2>
-							</td>
-						</tr>
-
-						<tr>
-							<td>First Name:</td>
-							<td><form:input type="text" path="firstName" id="firstName" /></td>
-						</tr>
-
-						<tr>
-							<td>Last Name:</td>
-							<td><form:input type="text" path="lastName" id="lastName" /></td>
-						</tr>
-
-						<tr>
-							<td>E-mail:</td>
-							<td><form:input type="text" path="email" id="emailId" /></td>
-						</tr>
-
-						<tr>
-							<td>Mobile Number:</td>
-							<td><form:input type="text" path="mobileNumber"
-									id="mobileNo" /></td>
-						</tr>
-
-						<tr>
-							<td>City:</td>
-							<td><form:input type="text" path="city" id="city" /></td>
-						</tr>
-
-						<tr>
-							<td>Country:</td>
-							<td><form:input type="text" path="country" id="country" /></td>
-						</tr>
-
-						<!-- dropdown example -->
-
-						<tr>
-							<td>Project Domain:</td>
-							<td>
-								<form:select path="domain">
-								<form:option value="NONE" label="Select" />
-								<form:options items="${domainList}" />
-								</form:select>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Requirments:</td>
-							<td><form:textarea path="requirments" id="requirments"
-									rows="4" cols="30" /></td>
-						</tr>
-
-						<tr>
-							<td>Project Given Date:</td>
-							<td><form:input type="date" path="projectBeginingDate"
-									id="mobilenumber" /></td>
-						</tr>
-
-						<tr>
-							<td>Expected Project to Complete:</td>
-							<td><form:input type="date" path="projectEndDate"
-									id="mobilenumber" /></td>
-						</tr>
-
-						<center>
-							<td><input type="submit" value="Submit Form"
-								class="formbtnsubmit firstsubmit" /></td>
-							<td><input type="reset" class="formbtnreset firstreset">
-						</center>
-					</table>
-
-				</form:form>
-			</div>
-		</div>
-	</section>
-
-	<footer id="footboxs">
-		<jsp:include page="footer.jsp" />
-	</footer>
+    <jsp:include page="footer.jsp" />
 </body>
 
 </html>

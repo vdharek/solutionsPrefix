@@ -2,83 +2,94 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>List Clients</title>
+    <title>List Clients</title>
 
-<!-- css reference -->
-<link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/style.css" />
+    <!-- css reference -->
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/form.css" />
 
-<jsp:include page="header.jsp" />
+    <link type="text/css" rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" /> 
+
+    <!-- JavaScript file -->
+
+    <script src="<c:url value='/resources/js/script.js'/>"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <jsp:include page="header.jsp" />
 
 </head>
+
 <body>
-	<section id="boxes">
-		<div class="container">
-			<div class="boxlist">
+    <div class="container">
+        <div class="row">
 
-				<h2>Clients:</h2>
+            <div class="col-sm-12">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <h3>ALL CLIENTS</h3>
+                    <br>
+                    <div class="addnew-form">
 
-				<!-- add out HTML table here -->
+                        <table>
+                            <tr>
+                                <th class="trtd">First Name</th>
+                                <th class="trtd">Last Name</th>
+                                <th class="trtd">Email</th>
+                                <th class="trtd">Mobile Number</th>
+                                <th class="trtd">City</th>
+                                <th class="trtd">Country</th>
+                                <th class="trtd">Domain</th>
+                                <th class="trtd">View</th>
+                                <th class="trtd">Action</th>
+                            </tr>
 
-				<table>
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
-						<th>Mobile Number</th>
-						<th>City</th>
-						<th>Country</th>
-						<th>Domain</th>
-						<th>View</th>
-						<th>Action</th>
-					</tr>
+                            <!-- LOOPS -->
 
-					<!-- loop over and print our customers -->
-					<c:forEach var="tempClients" items="${clientsModel}">
+                            <c:forEach var="tempClients" items="${clientsModel}">
 
-						<!-- construct an "view" link with customer Id -->
-						<c:url var="viewLink" value="/clients/viewOneClient">
-							<c:param name="clientId" value="${tempClients.id }" />
-						</c:url>
-						
-						<c:url var="updateLink" value="/clients/formForUpdate">
-							<c:param name="clientId" value="${tempClients.id }" />
-						</c:url>
-						
-						<c:url var="deleteLink" value="/clients/delete">
-							<c:param name="clientId" value="${tempClients.id }" />
-						</c:url>
-						
-						<tr>
-							<td>${tempClients.firstName}</td>
-							<td>${tempClients.lastName}</td>
-							<td>${tempClients.email}</td>
-							<td>${tempClients.mobileNumber}</td>
-							<td>${tempClients.city}</td>
-							<td>${tempClients.country}</td>
-							<td>${tempClients.domain}</td>
-							
-							<td>
-								<a href="${viewLink }">View</a>
-							</td>	
-							<td>
-								<a href="${updateLink }">Update</a>
-								|
-								<a href="${deleteLink }"
-								onClick="if(!(confirm('Are you sure you want to delete this Client?')))return false">Delete</a>
-							</td>							
-						</tr>
+                                <!-- construct an "view" link with customer Id -->
+                                <c:url var="viewLink" value="/clients/viewOneClient">
+                                    <c:param name="clientId" value="${tempClients.id }" />
+                                </c:url>
 
-					</c:forEach>
-				</table>
-			</div>
-		</div>
-	</section>
+                                <c:url var="updateLink" value="/clients/formForUpdate">
+                                    <c:param name="clientId" value="${tempClients.id }" />
+                                </c:url>
 
+                                <c:url var="deleteLink" value="/clients/delete">
+                                    <c:param name="clientId" value="${tempClients.id }" />
+                                </c:url>
 
-	<jsp:include page="footer.jsp" />
+                                <tr>
+                                    <td class="trtd">${tempClients.firstName}</td>
+                                    <td class="trtd">${tempClients.lastName}</td>
+                                    <td class="trtd">${tempClients.email}</td>
+                                    <td class="trtd">${tempClients.mobileNumber}</td>
+                                    <td class="trtd">${tempClients.city}</td>
+                                    <td class="trtd">${tempClients.country}</td>
+                                    <td class="trtd">${tempClients.domain}</td>
 
+                                    <td class="trtd">
+                                        <a href="${viewLink }">View</a>
+                                    </td>
+                                    <td class="trtd">
+                                        <a href="${updateLink }">Update</a>
+                                        |
+                                        <a href="${deleteLink }"
+                                            onClick="if(!(confirm('Are you sure you want to delete this Client?')))return false">Delete</a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <jsp:include page="footer.jsp" />
 </body>
 
 </html>

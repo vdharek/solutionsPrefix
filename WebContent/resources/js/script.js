@@ -27,28 +27,22 @@ function validate() {
 	if (document.NewClient.mobileNo.value == ""
 			|| isNaN(document.NewClient.mobileNo.value)
 			|| document.NewClient.mobileNo.value.length != 10) {
-		alert("Please provide a Mobile No in the format 123.");
+		alert("Please provide a Mobile No that has 10 digits.");
 		document.NewClient.mobileNo.focus();
 		return false;
 	}
 
 	// City validation
-	if (document.NewClient.city.value == "-1") {
+	if (document.NewClient.city.value == "") {
 		alert("Please provide client's City!");
 		document.NewClient.city.focus();
 		return false;
 	}
 
 	// Country Validation
-	if (document.NewClient.country.value == "-1") {
+	if (document.NewClient.country.value == "") {
 		alert("Please provide client's Contry!");
 		document.NewClient.city.focus();
-		return false;
-	}
-
-	// Domain Validation
-	if (document.NewClient.proDomain.value == "-1") {
-		alert("Please select any domain!");
 		return false;
 	}
 
@@ -66,17 +60,17 @@ function validate() {
 	}
 
 	// Date validation
-	if (document.StudentRegistration.projectBeginingDate.value == "") {
+	if (document.NewClient.projectBeginingDate.value == "") {
 		alert("Please provide date of project:");
-		document.StudentRegistration.dob.focus();
+		document.NewClient.projectBeginingDate.focus();
 		return false;
 	}
 	return (true);
 
 	// Date validation
-	if (document.StudentRegistration.projectEndDate.value == "") {
+	if (document.NewClient.projectEndDate.value == "") {
 		alert("Please provide expected date to complete project:");
-		document.StudentRegistration.dob.focus();
+		document.NewClient.projectEndDate.focus();
 		return false;
 	}
 	return (true);

@@ -4,108 +4,103 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<!-- CSS files -->
+    <!-- CSS files -->
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/form.css" />
 
-<link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/main.css" />
+    <link type="text/css" rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
 
-<link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/form.css" />
+    <!-- JavaScript file -->
 
-<link type="text/css" rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-<!-- JavaScript file -->
-
-<script src="<c:url value='/resources/js/script.js'/>"></script>
-
-<title>Add Clients</title>
+    <script src="<c:url value='/resources/js/script.js'/>"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Add Clients</title>
 </head>
 
 <body>
-	<jsp:include page="header.jsp" />
+    <jsp:include page="header.jsp" />
 
-	<section id="boxes">
-		<div class="container">
-			<div class="box">
-			
-				<form:form name="NewClient" action="saveClient"
-					modelAttribute="client" method="POST">
-										
-					<table cellpadding="2" width="60%" bgcolor="99FFFF" align="center"
-						cellspacing="2">
+    <div class="container">
+        <div class="row">
 
-						<tr>
-							<td colspan=2>
-								<h2>Mr ${client.firstName}'s Information:</h2>
-							</td>
-						</tr>
+            <div class="col-sm-7">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <h3>MR ${client.firstName} INFORMATION:</h3>
+                    <br>
+                    <div>
+                        <form action="#" method="post">
 
-						<tr>
-							<td>First Name:</td>
-							<td>${client.firstName}</td>
-						</tr>
+                            <table>
+                                <tr>
+                                    <td class="class">First Name:</td>
+                                    <td class="class">${client.firstName}</td>
+                                </tr>
+                                <tr class="class">
+                                    <td class="class">Last Name:</td>
+                                    <td class="class">${client.lastName}</td>
+                                </tr>
+                                <tr class="class">
+                                    <td class="class">E-mail:</td>
+                                    <td class="class">${client.email}</td>
+                                </tr>
+                                <tr class="class">
+                                    <td class="class">Mobile Number:</td>
+                                    <td class="class">${client.mobileNumber}</td>
+                                </tr>
+                                <tr class="class">
+                                    <td class="class">City:</td>
+                                    <td class="class">${client.city}</td>
+                                </tr>
+                                <tr class="class">
+                                    <td class="class">Country:</td>
+                                    <td class="class">${client.country}</td>
+                                </tr>
+                                <tr class="class">
+                                    <td class="class">Domain:</td>
+                                    <td class="class">${client.domain}</td>
+                                </tr>
+                                <tr class="class">
+                                    <td class="class">Requirements:</td>
+                                    <td class="class">${client.requirments}</td>
+                                </tr>
+                                <tr class="class">
+                                    <td class="class">Start Date:</td>
+                                    <td class="class">${client.projectBeginingDate}</td>
+                                </tr>
+                                <tr class="class">
+                                    <td class="class">Project Deadline Date::</td>
+                                    <td class="class">${client.projectEndDate}</td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="well">
+                    <p>APIs.. Coming Soon</p>
+                </div>
+                <div class="well">
+                    <p>APIs.. Coming Soon</p>
+                </div>
+                <div class="well">
+                    <p>APIs.. Coming Soon</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
 
-						<tr>
-							<td>Last Name:</td>
-							<td>${client.lastName}</td>
-						</tr>
+    <footer class="container-fluid text-center">
+        <p>
+            <p>&copy; 2019 PreFix Solutions<p></p>
+    </footer>
 
-						<tr>
-							<td>E-mail:</td>
-							<td>${client.email}</td>
-						</tr>
-
-						<tr>
-							<td>Mobile Number:</td>
-							<td>${client.mobileNumber}</td>
-						</tr>
-
-						<tr>
-							<td>City:</td>
-							<td>${client.city}</td>
-						</tr>
-
-						<tr>
-							<td>Country:</td>
-							<td>${client.country}</td>
-						</tr>
-
-						<!-- dropdown example -->
-
-						<tr>
-							<td>Project Domain:</td>
-							<td>${client.domain}</td>
-						</tr>
-
-						<tr>
-							<td>Requirments:</td>
-							<td>"${client.requirments}"</td>
-						</tr>
-
-						<tr>
-							<td>Project Given Date:</td>
-							<td>"${client.projectBeginingDate}" </td>
-						</tr>
-
-						<tr>
-							<td>Expected date to complete:</td>
-							<td>"${client.projectEndDate}"</td>
-						</tr>
-						
-					</table>
-				</form:form>
-			</div>
-		</div>
-	</section>
-
-	<footer id="footboxs">
-		<jsp:include page="footer.jsp" />
-	</footer>
 </body>
 
 </html>

@@ -11,33 +11,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/form.css" />
-    
-    <link type="text/css"
-		rel="stylesheet"
-		href="${pageContext.request.contextPath}/resources/css/main.css"/>
-	
-	<link type="text/css"
-		rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    
+
+    <link type="text/css" rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+
     <script src="<c:url value='/resources/js/script.js'/>"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <a href="${pageContext.request.contextPath}/index.jsp"><img src="<c:url value='/resources/images/PngFile.png'/>" width="100px" height="50px" alt="Tagor"></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <a class="navbar-brand" href="imgs/PngFile.png">Logo</a> -->
             </div>
-            <nav>
-                <ul>
-                    <li><a href="${pageContext.request.contextPath}/clients/showFormForAdd">New Client</a></li>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="${pageContext.request.contextPath}/clients/showFormForAdd">Add Clients</a></li>
                     <li><a href="${pageContext.request.contextPath}/clients/list">Show Clients</a></li>
-                    <li><a href="#">Statastic</a></li>
-                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Stastics</a></li>
+                    <li><a href="#">Documentstion</a></li>
                 </ul>
-            </nav>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 </body>
+
 </html>
