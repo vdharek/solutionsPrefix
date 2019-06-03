@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- CSS -->
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/form.css" />
+    <link type="text/css" rel="stylesheet" href="<c:url value='/resources/css/form.css'/>" />
 
     <link type="text/css" rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />

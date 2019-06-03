@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -7,14 +9,14 @@
     <title>List Clients</title>
 
     <!-- css reference -->
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/form.css" />
+    <link type="text/css" rel="stylesheet" href="<c:url value='/resources/css/form.css'/>" />
 
     <link type="text/css" rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" /> 
 
     <!-- JavaScript file -->
 
-    <script src="<c:url value='/resources/js/script.js'/>"></script>
+    <script src="<c:url value='../resources/js/script.js'/>"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.solutionsPrefix.DAO.ClientsDAO;
 import com.solutionsPrefix.entity.Clients;
 import com.solutionsPrefix.service.ClientService;
 

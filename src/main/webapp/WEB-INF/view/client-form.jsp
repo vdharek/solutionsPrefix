@@ -10,7 +10,7 @@
 
     <!-- CSS files -->
     <link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/form.css" />
+	href="<c:url value='/resources/css/form.css'/>" />
 
 	<link type="text/css" rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" /> 
