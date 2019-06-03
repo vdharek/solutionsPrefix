@@ -1,22 +1,13 @@
 package com.solutionsPrefix.entity;
 
-
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-//import javax.persistence.EnumType;
-//import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="prefix_clients_tbl")
@@ -45,22 +36,18 @@ public class Clients {
 	@Column(name="country")
 	private String country;
 	
-	//@Enumerated(EnumType.STRING)
 	@Column(name="domain")
 	private String domain;
 	
 	@Column(name="requirments")
 	private String requirments;
 	
-	//@Temporal(TemporalType.DATE)
 	@Column(name="startdate")
 	private Date projectBeginingDate;
 	
-	//@Temporal(TemporalType.DATE)
 	@Column(name="enddate")
 	private Date projectEndDate;
 
-	// Getters and Setters methods
 	public int getId() {
 		return id;
 	}
@@ -156,5 +143,4 @@ public class Clients {
 				+ ", requirments=" + requirments + ", projectBeginingDate=" + projectBeginingDate + ", projectEndDate="
 				+ projectEndDate + "]";
 	}
-	
 }

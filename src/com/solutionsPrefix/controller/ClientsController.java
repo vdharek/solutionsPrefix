@@ -53,7 +53,7 @@ public class ClientsController {
 		// Save the client
 		clientsService.saveClient(theClients);
 
-		return "redirect:/clients/list";
+		return "list-clients";
 	}
 
 	@GetMapping("/viewOneClient")
