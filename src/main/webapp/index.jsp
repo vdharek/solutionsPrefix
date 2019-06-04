@@ -94,10 +94,19 @@
                             <input type="text" class="form-control" placeholder="User Name" required="required">
                         </div>
                         <div class="form-group input">
-                            <input type="text" class="form-control" placeholder="E-mail" required="required">
+                            <input type="text" class="form-control" placeholder="Password" required="required">
                         </div>
                         <div class="form-group input">
-                            <input type="password" class="form-control" placeholder="Password" required="required">
+                            <input type="password" class="form-control" placeholder="Confirm Password" required="required">
+                        </div>
+                        <div class="form-group input">
+                            <input type="text" class="form-control" placeholder="First Name" required="required">
+                        </div>
+                        <div class="form-group input">
+                            <input type="password" class="form-control" placeholder="Last Name" required="required">
+                        </div>
+                        <div class="form-group input">
+                            <input type="password" class="form-control" placeholder="E-mail" required="required">
                         </div>
                         <div class="form-group input">
                             <button type="submit" class="btn btn-primary btn-block">Create Account</button>
