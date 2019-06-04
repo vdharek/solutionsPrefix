@@ -10,14 +10,14 @@
 
     <!-- CSS files -->
     <link type="text/css" rel="stylesheet"
-	href="<c:url value='/resources/css/form.css'/>" />
+	href="${pageContext.request.contextPath}/resources/css/form.css" />
 
 	<link type="text/css" rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" /> 
 
     <!-- JavaScript file -->
 
-    <script src="<c:url value='/resources/js/script.js'/>"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/script.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <title>Add Clients</title>

@@ -42,10 +42,6 @@
         <p>Clients, Managers, Admin Portal</p>
     </footer>
 
-    </div>
-    </div>
-    </nav>
-
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
