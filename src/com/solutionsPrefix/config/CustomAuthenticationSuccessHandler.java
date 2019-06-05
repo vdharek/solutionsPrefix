@@ -10,10 +10,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.stereotype.Component;
 
 import com.solutionsPrefix.entity.User;
 import com.solutionsPrefix.service.UserService;
 
+@Component
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
 	@Autowired
@@ -32,6 +34,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		User theUser = userService.findByUserName(userName);
 		
 		// now place in the session
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("user", theUser);
 		
@@ -40,5 +43,4 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		response.sendRedirect(request.getContextPath() + "/");
 		
 	}
-
 }

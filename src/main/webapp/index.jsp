@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -61,17 +61,22 @@
             </div>
             <div class="col-sm-4">
                 <div class="login-form">
-                    <form action="#" method="post">
+                    <form action="${pageContext.request.contextPath}/authenticateTheUser" method="post">
                         <h2 class="text-center">Log in</h2>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Username" required="required">
+                            <input type="text" name="username" class="form-control" placeholder="Username" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" required="required">
+                            <input type="password" name="password" class="form-control" placeholder="Password" required="required">
                         </div>
                         <div class="form-group">
-                            <a href="${pageContext.request.contextPath}/clients/list" class="btn btn-primary btn-block">Log in</a>
+                            <button type="submit" class="btn btn-success">Login</button>
                         </div>
+                        
+                        <input type="hidden"
+							   name="${_csrf.parameterName}"
+							   value="${_csrf.token}" />
+                        
                         <div class="clearfix">
                             <!-- <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label> -->
                             <!-- <a href="#" class="pull-right">Forgot Password?</a> -->
@@ -83,7 +88,7 @@
 
                 <div id="id01" class="modal" class="login-form">
 
-                    <form class="modal-content animate" action="#">
+                    <%-- <form:form class="modal-content animate" action="#">
                         <div class="imgcontainer">
                             <span onclick="document.getElementById('id01').style.display='none'" class="close"
                                 title="Close Modal">&times;</span>
@@ -91,26 +96,33 @@
 
                         <h2 class="text-center">Sign Up</h2>
                         <div class="form-group input">
-                            <input type="text" class="form-control" placeholder="User Name" required="required">
+                        	<form:errors path="userName" cssClass="error" />
+                            <form:input path="userName" class="form-control" placeholder="User Name" required="required" />
                         </div>
                         <div class="form-group input">
-                            <input type="text" class="form-control" placeholder="Password" required="required">
+                        	<form:errors path="password" cssClass="error" />
+                            <form:password path="password" class="form-control" placeholder="Password" required="required" />
                         </div>
                         <div class="form-group input">
-                            <input type="password" class="form-control" placeholder="Confirm Password" required="required">
+                        	<form:errors path="matchingPassword" cssClass="error" />
+                            <form:password path="matchingPassword"  class="form-control" placeholder="Confirm Password" required="required" />
                         </div>
                         <div class="form-group input">
-                            <input type="text" class="form-control" placeholder="First Name" required="required">
+                        	<form:errors path="firstName" cssClass="error" />
+                            <form:input path="firstName" class="form-control" placeholder="First Name" required="required" />
                         </div>
                         <div class="form-group input">
-                            <input type="password" class="form-control" placeholder="Last Name" required="required">
+                        	<form:errors path="lastName" cssClass="error" />
+                            <form:input path="lastName" class="form-control" placeholder="Last Name" required="required" />
                         </div>
                         <div class="form-group input">
-                            <input type="password" class="form-control" placeholder="E-mail" required="required">
+                        	<form:errors path="email" cssClass="error" />
+                            <form:input path="email" class="form-control" placeholder="E-mail" required="required" />
                         </div>
                         <div class="form-group input">
-                            <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                            <button type="submit" class="btn btn-primary">Create Account</button>
                         </div>
+                        
                         <div class="clearfix">
                             <!-- <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label> -->
                             <!-- <a href="#" class="pull-right">Forgot Password?</a> -->
@@ -119,7 +131,7 @@
                         <div class="container" style="background-color:#f1f1f1">
 
                         </div>
-                    </form>
+                    </form:form> --%>
                 </div>
 
             </div>

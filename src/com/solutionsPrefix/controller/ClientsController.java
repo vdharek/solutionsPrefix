@@ -101,5 +101,11 @@ public class ClientsController {
 
 		return domainList;
 	}
+	
+	@GetMapping("/user")
+	public String showHome() {
+		
+		return "home";
+	}
 
 }
