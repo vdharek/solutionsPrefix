@@ -83,7 +83,7 @@
                         </div>
                     </form>
                     <p class="text-center" onclick="document.getElementById('id01').style.display='block'"><a
-                            href="#">Create an Account</a></p>
+                            href="${pageContext.request.contextPath}/register/showRegistrationForm">Create an Account</a></p>
                 </div>
 
                 <div id="id01" class="modal" class="login-form">
