@@ -1,3 +1,4 @@
+
 package com.solutionsPrefix.controller;
 
 import org.springframework.stereotype.Controller;
@@ -10,5 +11,5 @@ public class UserController {
 	public String showHome() {
 		return "home";
 	}
-	
+
 }
