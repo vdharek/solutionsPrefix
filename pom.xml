@@ -13,7 +13,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
   <properties>
 		<springsecurity.version>5.0.4.RELEASE</springsecurity.version>
 		<springframework.version>5.1.7.RELEASE</springframework.version>
-		<hibernate.version>5.2.16.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 		<mysql.connector.version>8.0.13</mysql.connector.version>
 		<c3po.version>0.9.5.4</c3po.version>
 
